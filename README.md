@@ -8,37 +8,37 @@ care se salveaza acolo, una pentru client, cu datele initiale citite din
 fisier si lista lui de dorinte, si una speciala pentru datele primite de 
 client de la tracker.
 
-struct tracker_list: structura folosita in tracker
-        nr_files = numarul total de fisiere 
-        files[] = numele fisierelor
+struct tracker_list: structura folosita in tracker:
+        nr_files = numarul total de fisiere; 
+        files[] = numele fisierelor;
         swarm_file[] = swarm-ul fiecarui fisier
 
 struct swarm_file: structura folosita a exemplifica toate datele unui fisier
-                        din tracker
+                        din tracker:
         clients[i] = are valaorea 1 daca clientul cu rank-ul i detine parti din
-                fisierul curent
-        seed[i] = are valaorea 1 daca clientul cu rank-ul i este seed pentru fisier
-        nr_hashes[i] = numarul de hash-uri pe care clientul i il are din fisier
-        hashes[i][j] = al j-lea hash detinut de clientul i
+                fisierul curent;
+        seed[i] = are valaorea 1 daca clientul cu rank-ul i este seed pentru fisier;
+        nr_hashes[i] = numarul de hash-uri pe care clientul i il are din fisier;
+        hashes[i][j] = al j-lea hash detinut de clientul i;
 
-struct file: structura folosita pentru datele fisierelor
-        name_file = numele fisierului
-        nr_chunks = numarul de hash-uri
-        hashes[i] = hash-urile efective in ordine
+struct file: structura folosita pentru datele fisierelor:
+        name_file = numele fisierului;
+        nr_chunks = numarul de hash-uri;
+        hashes[i] = hash-urile efective in ordine;
 
-struct client: structura folosita pentru clienti
-        rank = rank-ul clientului
-        nr_owned_files = numarul de fisiere detinute de client initial
-        owned_files = fisierele detinute initial de client
-        nr_wanted_files = numarul de fisiere pe care clientul de vrea
-        wanted_files = numele fisierelor pe care clientul de vrea
-        wanted[i] = toate datele necesare pentru fisierul i dorit
+struct client: structura folosita pentru clienti:
+        rank = rank-ul clientului;
+        nr_owned_files = numarul de fisiere detinute de client initial;
+        owned_files = fisierele detinute initial de client;
+        nr_wanted_files = numarul de fisiere pe care clientul de vrea;
+        wanted_files = numele fisierelor pe care clientul de vrea;
+        wanted[i] = toate datele necesare pentru fisierul i dorit;
 
-struct from_tracker: structura folosita pentru datele primite de la tracker
-        file = numele fisierului
-        nr_hashes = numarul de hash-uri
-        hashes = hash-urile efective
-        client = rank-ul cleintului care detine segmentul
+struct from_tracker: structura folosita pentru datele primite de la tracker:
+        file = numele fisierului;
+        nr_hashes = numarul de hash-uri;
+        hashes = hash-urile efective;
+        client = rank-ul cleintului care detine segmentul;
 
 Am creat numeroase functii ajutatoare, pentru a face codul mai usor de inteles
 si de urmarit, atat pentru tracker, cat si pentru client.
