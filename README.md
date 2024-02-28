@@ -9,8 +9,8 @@ fisier si lista lui de dorinte, si una speciala pentru datele primite de
 client de la tracker.
 
 struct tracker_list: structura folosita in tracker
-        nr_files = numarul total de fisiere 
-        files[] = numele fisierelor
+nr_files = numarul total de fisiere 
+files[] = numele fisierelor
         swarm_file[] = swarm-ul fiecarui fisier
 
 struct swarm_file: structura folosita a exemplifica toate datele unui fisier
